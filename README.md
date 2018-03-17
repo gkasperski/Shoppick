@@ -1,4 +1,4 @@
-# Shoppick
+# Shoppick 2017 June
 Shopping list app - not finished - abadoned.
 Made just for a contest and for fun.
 
