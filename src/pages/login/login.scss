@@ -1,0 +1,30 @@
+﻿page-login {
+  $sky: #46c7f3;
+  
+  .logo {
+    padding-right: 40px;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+  }
+
+  .app-name {
+    text-align: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 900;
+    font-family: 'Audiowide' !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    padding-bottom: 26px;
+  }
+
+  button {
+    height: 40px !important;
+    font-weight: 400 !important;
+  }
+
+
+
+}

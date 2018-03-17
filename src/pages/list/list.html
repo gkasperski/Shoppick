@@ -1,0 +1,24 @@
+﻿<ion-header>
+    <ion-navbar>
+        <ion-title>
+            <ion-row>
+                <ion-col></ion-col>
+                <ion-col></ion-col>
+                <ion-col>
+                    {{listName}}
+                </ion-col>
+                <ion-col></ion-col>
+                <ion-col>
+                    <ion-icon ios="ios-close" md="md-close" (click)="removeList(listId)"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="your-list">
+    <ion-item *ngFor="let product of products">
+            <h2>{{product.name}}</h2>
+            <p>{{product.quantity}}</p>
+    </ion-item>
+</ion-content>

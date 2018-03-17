@@ -1,0 +1,59 @@
+﻿<ion-content class="auth-content no-scroll" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="logo">
+        <img src="assets/images/logo.png" width="180" height="110" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="app-name">Shoppick</ion-col>
+    </ion-row>
+    <form novalidate #signInForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-item class="rounded">
+            <ion-icon name="md-person" item-left color="dark"></ion-icon>
+            <ion-input type="email" name="email" [(ngModel)]="form.email" placeholder="Adres e-mail" email required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="rounded">
+            <ion-icon name="lock" item-left color="dark"></ion-icon>
+            <ion-input type="password" name="password" [(ngModel)]="form.password" placeholder="Hasło" required minlength="6"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button full outline color="light" [disabled]="!signInForm.form.valid" (click)="signIn()">ZALOGUJ SIĘ</button>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row>
+      <ion-col class="center">
+        -lub-
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button full icon-left color="danger" class="rounded" (click)="loginUserWithGoogle()"><ion-icon name="logo-googleplus"></ion-icon>Zaloguj z Google</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button full icon-left color="fbblue" class="rounded" (click)="loginUserWithFacebook()"><ion-icon name="logo-facebook"></ion-icon>Zaloguj z Facebook</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="center">
+        <button ion-button clear color="clean" (click)="signUp()" style="padding:0 !important;">Nowe konto</button>
+      </ion-col>
+      <ion-col class="center">
+        <button ion-button clear color="clean" (click)="forgotPassword()" style="padding:0 !important;">Odzyskaj konto</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

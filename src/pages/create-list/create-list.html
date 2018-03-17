@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Dodaj listę z produktami
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="products">
+  <ion-item>
+    <ion-input type="text" name="listName" placeholder="Moja lista" [(ngModel)]="newList.listName" required listName></ion-input>
+  </ion-item>
+  <ion-item *ngFor="let product of newList.products; let i = index">
+    <ion-input type="text" [(ngModel)]="product.name" placeholder="Produkt"></ion-input>
+    <ion-input type="number" [(ngModel)]="product.quantity" placeholder="Ilość"></ion-input>
+    <!--<ion-input type="number" [(ngModel)]="product.prize" placeholder="Cena (szt.)"></ion-input> lepiej by bylo dodawac ceny w listach a nie przy tworzeniu ich-->
+  </ion-item>
+  <button (click)="createNewList()" ion-button full style="height:50px; margin-top: 30px;">Zapisz listę</button>
+  <ion-fab right bottom>
+    <button ion-fab (click)="addNewProduct()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

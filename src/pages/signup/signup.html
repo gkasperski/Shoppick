@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Shoppick - Rejestracja nowego konta</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="auth-content no-scroll" padding>
+    <form novalidate (ngSubmit)="signUp()" #signUpForm="ngForm">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating color="clean">Adres e-mail</ion-label>
+                        <ion-icon name="ios-mail" item-left color="clean"></ion-icon>
+                        <ion-input type="email" name="email" [(ngModel)]="form.email"
+                            required email></ion-input>
+                    </ion-item>
+                        <ion-item>
+                            <ion-label floating color="clean">Podaj hasło</ion-label>
+                            <ion-icon name="ios-lock" item-left color="clean"></ion-icon>
+                            <ion-input type="password" name="password" [(ngModel)]="form.password" minlength="6" required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label floating color="clean">Powtórz hasło</ion-label>
+                            <ion-icon name="ios-lock-outline" item-left color="clean"></ion-icon>
+                            <ion-input type="password" name="repeatPassword" [(ngModel)]="form.repeatPassword" pattern="{{form.password}}" required minlength="6"></ion-input>
+                        </ion-item>  
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="center">
+                    <button ion-button full color="clean" style="height:50px; margin-top: 30px;" [disabled]="!signUpForm.form.valid">Zarejestruj nowe konto</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
